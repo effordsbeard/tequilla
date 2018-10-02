@@ -118,7 +118,7 @@ class Tequilla(object):
             else:
                 param, text = part.split('}}')
                 result += ', %s, ' % param
-                result += '\'%s\'' % text
+                result += '\'%s\'' % text.replace('\'', '\\\'')
 
         return result
 
