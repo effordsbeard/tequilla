@@ -111,10 +111,11 @@ class Tequilla(object):
     def expr(self, html):
         parts = html.split('{{')
         result = ''
+        print(parts)
 
         for part in parts:
             if not '}}' in part:
-                result += '\'%s\'' % part
+                result += '\'%s\'' % part.replace('\'', '\\\'')
             else:
                 param, text = part.split('}}')
                 result += ', %s, ' % param
