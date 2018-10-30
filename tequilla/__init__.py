@@ -68,7 +68,6 @@ class Tequilla(object):
             d(elem).replaceWith(replacer)
             scope_id += 1
             # do while document has scopes
-
         scopes.append(d.outerHtml()) # final scope is whole document
 
         compiled = []
@@ -111,7 +110,6 @@ class Tequilla(object):
     def expr(self, html):
         parts = html.split('{{')
         result = ''
-        print(parts)
 
         for part in parts:
             if not '}}' in part:
